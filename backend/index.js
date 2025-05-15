@@ -6,7 +6,7 @@ import menueRouter from "./routes/menuRouter.js";
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT||5000;
 const frontendUrl = process.env.FRONTEND_URL;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
