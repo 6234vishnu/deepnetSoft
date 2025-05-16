@@ -9,14 +9,12 @@ const app = express();
 const PORT = process.env.PORT||5000;
 console.log(process.env.FRONTEND_URL);
 
-const frontendUrl = process.env.FRONTEND_URL;
-const allowedOrigins = [
-  frontendUrl
-];
+
+const allowedOrigins = ['https://deepnet-soft-two.vercel.app'];
 
 app.use(cors({
   origin: function (origin, callback) {
-    if (allowedOrigins.includes(origin)) {
+    if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
