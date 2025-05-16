@@ -74,13 +74,18 @@ export const createMenu = async (req, res) => {
   }
 };
 
+
+
 export const getMenuData = async (req, res) => {
   try {
     const getData = await Menu.find().populate("items");
+    console.log(getData);
     if (!getData)
       return res
         .status(500)
         .json({ success: false, message: "couldint find any Menu's" });
+        
+        
     return res.status(200).json({ success: true, menu: getData });
   } catch (error) {
     console.log("error in getMenuData", error);
