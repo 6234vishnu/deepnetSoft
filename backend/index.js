@@ -25,14 +25,7 @@ app.use(cors({
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use(
-//   cors({
-//     origin: frontendUrl,
-//     methods: "GET,POST,PUT,PATCH,OPTIONS",
-//     allowedHeaders: "Content-Type, Authorization",
-//     credentials: true,
-//   })
-// );
+
 connectDB()
 
 app.get("/", (req, res) => {

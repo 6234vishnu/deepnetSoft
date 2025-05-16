@@ -129,6 +129,7 @@ const HomePage: React.FC = () => {
             </a>
             <a href="#">About</a>
             <a href="#">Contact</a>
+            <a href="/createMenu">CreateMenu</a>
           </nav>
         </header>
 
